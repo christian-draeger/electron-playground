@@ -1,5 +1,9 @@
 #playing around with electron
 
+##run app
+
+	npm run electron
+
 ###how to create electron app
 
 create a new project
