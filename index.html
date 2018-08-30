@@ -22,9 +22,9 @@
         <button type="submit">Get info</button>
     </form>
 
-    <div id="result">
+    <h3 id="result">
 
-    </div>
+    </h3>
 
     <script>
         const electron = require('electron'); // works because electron (node) has access to require and other modules
@@ -35,6 +35,10 @@
             const { path } = document.querySelector('input').files[0];
 
             ipcRenderer.send('video:submit', path);
+        });
+
+        ipcRenderer.on('video:metadata', (event, duration) => {
+            document.getElementById("result").innerHTML = `Video is ${duration} seconds`
         });
     </script>
 </body>
