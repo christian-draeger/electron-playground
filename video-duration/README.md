@@ -1,4 +1,5 @@
 # playing around with electron
+- trying out inter process communication events and general setup 
 
 ## install app
 
