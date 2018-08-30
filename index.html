@@ -27,12 +27,14 @@
     </div>
 
     <script>
+        const electron = require('electron'); // works because electron (node) has access to require and other modules
+        const { ipcRenderer } = electron; // allows inter process communication between browser and node
+
         document.querySelector('form').addEventListener('submit', (event) => {
             event.preventDefault();
-            const file = document.querySelector('input').files[0];
-            const fileSize = file.size;
-            const result = document.getElementById("result");
-            result.innerHTML = fileSize;
+            const { path } = document.querySelector('input').files[0];
+
+            ipcRenderer.send('video:submit', path);
         });
     </script>
 </body>
