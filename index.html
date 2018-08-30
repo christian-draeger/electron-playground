@@ -19,5 +19,20 @@
             <label>Select a video</label>
             <input type="file" accept="video/*" />
         </div>
+        <button type="submit">Get info</button>
     </form>
+
+    <div id="result">
+
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const file = document.querySelector('input').files[0];
+            const fileSize = file.size;
+            const result = document.getElementById("result");
+            result.innerHTML = fileSize;
+        });
+    </script>
 </body>
