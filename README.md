@@ -1,10 +1,14 @@
-#playing around with electron
+# playing around with electron
 
-##run app
+## install app
+
+	npm install
+
+## run app
 
 	npm run electron
 
-###how to create electron app
+### how to create electron app
 
 create a new project
 
